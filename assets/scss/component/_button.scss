@@ -1,0 +1,128 @@
+@use '../utils' as*;
+
+
+
+
+.main-btn{
+    display: inline-block;
+    padding: 20px 34px;
+    font-family: $Dm;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+    color: var(--white-color);
+    transition: all 0.3s ease;
+    & svg{
+      fill: var(--white-color);
+      transition: $transition-3-ease;
+      margin-left: 10px;
+      margin-bottom: 3px;
+      
+    }
+    & path{
+      transition: $transition-3-ease;
+      fill: var(--white-color);
+    }
+    & i{
+      font-size: 15px;
+      color: var(--white-color);
+      margin-left: 10px;
+      transition: all 0.3s ease;
+
+    }
+    &:hover{
+      border: 1px solid var(--theme-color);
+      background-color: transparent;
+      color: var(--theme-color);
+      & svg{
+        transform: translateX(5px);
+      }
+      & path{
+        fill: var(--theme-color);
+      }
+      & i{
+        transform: translateX(5px);
+        color: var(--theme-color);
+
+      }
+    }
+    &.black{
+      background-color: var(--text-color);
+      border: none;
+      
+    }
+    &.two{
+      background-color: transparent;
+      border: 1px solid var(--white-color);
+      & svg{
+      margin-left: 10px;
+
+      }
+      &:hover{
+        background-color: var(--theme-color);
+        border: 1px solid var(--theme-color);
+        color: var(--white-color);
+        & svg{
+        transform: translateX(5px);
+      }
+      & path{
+        fill: var(--white-color);
+      }
+
+      }
+    }
+    @include breakpoint(max-sm){
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+}
+
+.sec-btn{
+      @extend %d-flex,%item-center;
+      font-family: $Dm;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: var(--text-color);
+      .arrow{
+        @extend %d-flex,%item-center,%justify-center;
+        transition: $transition-3-ease;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid var(--border-color);
+        background-color: var(--theme-color);
+        margin-right: 8px;
+        & i{
+          color: var(--white-color);
+          font-size: 16px;
+        }
+      }
+      &:hover{
+        .arrow{
+          background-color: var(--text-color);
+        }
+      }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

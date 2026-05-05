@@ -1,0 +1,427 @@
+@use '../../utils' as *;
+
+
+
+
+.about{
+    &-title{
+        max-width: 700px;
+    }
+    &-thumb{
+        max-width: 420px;
+        height: 450px;
+        width: 100%;
+        border-radius: 10px;
+        // margin-top: 60px;
+        overflow: hidden;
+        position: relative;
+       & img{
+        transition: $transition-3-ease;
+       }
+        &:hover{
+            & img{
+                transform: scale(1.07);
+            }
+        }
+        @include breakpoint(max-lg){
+            margin-top: 40px;
+        }
+       
+        @include breakpoint(max-sm){
+            height: 300px;
+        }
+        @include breakpoint(max-xsm){
+            height: 200px;
+        }
+        &.two{
+            margin-top: 0;
+        }
+        &.three{
+            margin-top: 0;
+            max-width: 440px;
+            width: 100%;
+            height: 590px;
+            border-radius: 10px;
+            overflow: visible;
+            z-index: 2;
+            &:hover{
+                & img{
+                    transform:  none;
+                }
+            }
+            @include breakpoint(max-xl){
+                max-width: 350px;
+                height: auto;
+            }
+            @include breakpoint(max-lg){
+                margin-bottom: 60px;
+            }
+            
+             
+
+            & img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .img2{
+                max-width: 258px;
+                width: 100%;
+                height: 317px;
+                position: absolute;
+                right: -129px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 3;
+                @include breakpoint(max-xl){
+                    max-width: 200px;
+                    height: auto;
+                    right: -90px;
+                }
+                  @include breakpoint(max-sm){
+                display: none;
+                    }
+                 
+            }
+            &::after{
+                content: ' ';
+                position: absolute;
+                width: 184px;
+                height: 450px;
+                background-color: transparent;
+                border: 6px solid var(--theme-color);
+                right: -92px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 5px;
+                z-index: -1;
+                @include breakpoint(max-xl){
+                    width: 150px;
+                    height: 380px;
+                    right: -50px;
+                }
+                  @include breakpoint(max-sm){
+                display: none;
+                    }
+            }
+        }
+    }
+    &-thumb2{
+        // margin-left: -30px;
+        border-radius: 10px;
+        height: 380px;
+        width: 100%;
+       & img{
+        transition: $transition-3-ease;
+       }
+        &:hover{
+            & img{
+                transform: scale(1.07);
+            }
+        }
+        &.one{
+             @include breakpoint(max-xl){
+                display: none;
+            }
+        }
+        &.two{
+            margin: 0;
+            max-width: 423px;
+            width: 100%;
+            height: auto;
+            margin-left: 40px;
+            overflow: hidden;
+            & img{
+        transition: $transition-3-ease;
+       }
+        &:hover{
+            & img{
+                transform: scale(1.07);
+            }
+        }
+            @include breakpoint(max-xl){
+                display: none;
+            }
+            
+
+            
+        }
+        &.three{
+            margin: 0;
+            // margin-left: 50px;
+            // max-width: 235px;
+            height: 122px;
+            width: 235px;
+            border-radius: 10px;
+            // min-width: 235px;
+            z-index: 9;
+            @include breakpoint(max-xl){
+                max-width: 140px;
+                height: 120px;
+                margin-left: 10px;
+            }
+            @include breakpoint(max-lg){
+                max-width: 190px;
+                height: 120px;
+                margin-left: 20px;
+                margin-top: 7px;
+            }
+            @include breakpoint(max-sm){
+                max-width: 190px;
+                height: 120px;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+          
+            .play-btn-area{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                z-index: 999;
+            }
+        }
+    }
+    &-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 40px;
+         @include breakpoint(max-xl){
+            margin-left: 0;
+        }
+         @include breakpoint(max-lg){
+            margin-top: 40px;
+        }
+        .article{
+            max-width: 450px;
+            font-family: $Dm;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--gray-color);
+            @include breakpoint(max-lg){
+                max-width: 100%;
+                padding-right: 80px;
+            }
+            @include breakpoint(max-md){
+                max-width: 100%;
+                padding-right: 0;
+            }
+        }
+         &.two{
+            margin-top: 30px;
+            @include breakpoint(max-xl){
+                margin-top: 0;
+            }
+            @include breakpoint(max-lg){
+                margin-top: 50px
+            }
+        }
+         &.three{
+            margin-top: 0;
+        }
+    }
+    &-item{
+        @extend %d-flex,%item-center;
+        max-width: 430px;
+        margin-top: 30px;
+        .icon{
+            @extend %d-flex,%item-center,%justify-center;
+            max-width: 70px;
+            height: 70px;
+            background-color: var(--theme-color);
+            border-radius: 100%;
+            width: 100%;
+            margin-right: 25px;
+        }
+        .text{
+            & h3{
+                font-family: $Play;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 34px;
+                color: var(--text-color);
+            }
+            & p{
+                font-family: $Dm;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 26px;
+                color: var(--gray-color);
+            }
+        }
+         
+    }
+    &-btn-area{
+        display: flex;
+          @include breakpoint(max-xsm){
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+            }
+        .main-btn{
+            height: 100%;
+        }
+        .sign{
+            @include breakpoint(max-sm){
+                margin: 0;
+            }
+           
+        }
+        & img{
+            @include breakpoint(max-sm){
+                max-width: 100px;
+            }
+        }
+    }
+    &-nav-tabs{
+        justify-content: space-between;
+        @include breakpoint(max-xsm){
+        gap: 20px;
+        }
+    }
+    &-nav-link{
+        font-family: $Dm;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 26px;
+        text-transform: uppercase;
+        padding: 15px 40px;
+        background-color: transparent;
+        color: var(--body-color);
+        border: none;
+        border-radius: 50px 50px 0 0;
+        position: relative;
+        transition: $transition-3-ease;
+        @include breakpoint(max-xl){
+            padding: 10px 25px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include breakpoint(max-lg){
+            padding: 10px 35px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include breakpoint(max-sm){
+            padding: 10px 20px;
+            font-size: 12px;
+            line-height: 14px;
+        }
+        @include breakpoint(max-xsm){
+            padding: 10px 15px;
+            font-size: 12px;
+            line-height: 14px;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 6px;
+            background-color: var(--body-color);
+            border-radius: 6px;
+            bottom: -10px;
+            left: 0;
+             @include breakpoint(max-sm){
+            height: 4px;
+            }
+        }
+        &.active{
+            background-color: var(--theme-color);
+            color: var(--white-color);
+            &::after{
+                background-color: var(--theme-color);
+            }
+        }
+        &.white{
+            color: var(--white-color);
+        }
+    }
+    &-tab-pane{
+        position: absolute;
+        display: flex;
+        max-width: auto;
+        @include breakpoint(max-sm){
+            display: block;
+        }
+        & ul{
+            list-style: none;
+            min-width: 300px;
+            @include breakpoint(max-xsm){
+                min-width: 280px;
+            }
+            & li{
+                margin-bottom: 10px;
+                font-family: $Dm;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 26px;
+                color: var(--body-color);
+                @include breakpoint(max-xsm){
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+
+                & i{
+                    color: var(--theme-color);
+                    font-size: 16px;
+                    margin-right: 10px;
+                     @include breakpoint(max-xsm){
+                    font-size: 14px;
+                    line-height: 18px;
+                    }
+                }
+
+            }
+        }
+        
+        &:nth-child(3){
+            position: relative;
+        }
+        &.four{
+            & li{
+                color: var(--border-color);
+            }
+        }
+    }
+    &-vector1{
+        position: absolute;
+        right: 16px;
+        bottom: 160px;
+    }
+    .justice-img{
+        right: 0;
+        top: 30px;
+        @include breakpoint(max-xl){
+        & img{
+            width: 200px;
+            height: auto;
+        }
+        }
+        @include breakpoint(max-lg){
+        display: none;
+        }
+    }
+   
+    &.four{
+        background-color: var(--text-color);
+    }
+    &-inner{
+        padding-bottom: 240px;
+        @include breakpoint(max-xl){
+            padding-bottom: 100px;
+        }
+    }
+    &.three{
+        padding-bottom: 240px;
+        @include breakpoint(max-xl){
+            padding-bottom: 120px;
+        }
+    }
+}

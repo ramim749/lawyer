@@ -1,0 +1,1 @@
+sass --watch D:\RAMIM\PROJECT\Lawyer\assets\scss\main.scss:D:\RAMIM\PROJECT\Lawyer\assets\css\style.css

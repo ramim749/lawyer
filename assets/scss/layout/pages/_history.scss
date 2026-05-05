@@ -1,0 +1,105 @@
+@use '../../utils' as *;
+
+
+
+.history{
+    &-title{
+        @extend %d-flex,%justify-between;
+        @include breakpoint(max-lg){
+                display: block;
+            }
+        & h2{
+            max-width: 485px;
+            @include breakpoint(max-lg){
+                max-width: 550px;
+            }
+            @include breakpoint(max-sm){
+                max-width: 400px;
+            }
+        }
+        .article{
+            max-width: 450px;
+            @include breakpoint(max-xl){
+                max-width: 400px;
+            }
+            @include breakpoint(max-lg){
+                max-width: 100%;
+            }
+            @include breakpoint(max-sm){
+                max-width: 450px;
+            }
+        }
+    }
+    &-content{
+        @extend %d-flex,%justify-between,%item-center;
+        gap: 20px;
+        padding-top: 70px;
+        @include breakpoint(max-lg){
+            padding-top: 50px;
+            flex-direction: column;
+            gap: 30px;
+        }
+        @include breakpoint(max-sm){
+            padding-top: 40px;
+            gap: 20px;
+            
+        }
+    }
+    &-item{
+        padding: 65px 40px 40px 40px ;
+        max-width: 370px;
+        background-color: var(--white-color);
+        border-radius: 20px;
+        @include breakpoint(max-xl){
+            padding: 65px 30px 30px 30px;
+        }
+        @include breakpoint(max-lg){
+            max-width: 100%;
+            margin-top: 28px;
+        }
+        & h3{
+            color: var(--text-color);
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 34px;
+            margin-bottom: 20px;
+        }
+        & p{
+            color: var(--body-color);
+            font-family: $Dm;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+
+
+
+        }
+        .year{
+            display: block;
+            padding: 10px 35px;
+            top: -25px;
+            left: 50%;
+            background-color: var(--theme-color);
+            border-radius: 10px;
+            transform: translateX(-50%);
+            color: var(--white-color);
+            font-family: $Dm;
+            font-weight: 700;
+            font-size: 24px;
+            //  @include breakpoint(max-lg){
+            //         top: 0;
+            // }
+        }
+    }
+    &-angels{
+        & img{
+            min-width: 24px;
+            @include breakpoint(max-lg){
+            transform: rotate(90deg);
+            }
+        }
+    }
+}

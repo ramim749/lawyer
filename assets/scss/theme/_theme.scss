@@ -1,0 +1,414 @@
+@use '../utils' as*;
+
+
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*---------------------------------
+	typography css start 
+---------------------------------*/
+
+
+
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+   & p {
+	margin: 0;
+	padding: 0;
+}
+ p{
+  color: var(--body-color);
+}
+a{
+	text-decoration: none;
+}
+}
+
+#main-3{
+  background-color: var(--black-color);
+}
+
+.sec-title{
+  .sub-title{
+    display: inline-block;
+        font-family: $Play;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        color: var(--theme-color);
+        text-transform: capitalize;
+        margin-bottom: 13px;
+        position: relative;
+        margin-left: 24px;
+        &::before{
+          content: "";
+          position: absolute;
+          display:block;
+          width: 10px;
+          height: 10px;
+          background-color: var(--theme-color);
+          color: var(--theme-color);
+          transform: rotate(-45deg);
+          left: -20px;
+          top: 11px;
+          z-index: 99;
+        }
+        &.two{
+          &::after{
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: var(--theme-color);
+          color: var(--theme-color);
+          transform: rotate(-45deg);
+          right: -20px;
+          top: 11px;
+          z-index: 99;
+        }
+        }
+       
+       }
+     & h1{
+        font-family: $Play;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 74px;
+        line-height: 84px;
+        color: var(--white-color);
+        @include breakpoint(max-xl){
+            font-size: 60px;
+            line-height: 68px;
+        }
+        
+        @include breakpoint(max-sm){
+            font-size: 48px;
+            line-height: 55px;
+        }
+         @include breakpoint(max-xsm){
+            font-size: 42px;
+            line-height: 52px;
+        }
+        .highlight{
+        color: var(--theme-color);
+        display: inline-block;
+         @include breakpoint(max-lg){
+            font-size: 65px;
+            line-height: 74px;
+        }
+        @include breakpoint(max-sm){
+            font-size: 48px;
+            line-height: 55px;
+        }
+        @include breakpoint(max-xsm){
+            font-size: 42px;
+            line-height: 52px;
+        }
+
+        }
+       }
+
+       
+       & h2{
+          font-family: $Play;
+          font-style: normal;
+          text-transform: capitalize;
+          font-weight: 700;
+          font-size: 48px;
+          line-height: 54px;
+          color: var(--text-color);
+           @include breakpoint(max-md){
+            font-size: 40px;
+            line-height: 50px;
+        }
+           @include breakpoint(max-sm){
+            font-size: 30px;
+            line-height: 38px;
+        }
+         
+        &.white-color{
+          color: var(--white-color);
+        }
+       }
+
+       & p{
+        margin-top: 40px;
+        font-family:$Dm;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: var(--white-color);
+        @include breakpoint(max-md){
+          margin-top: 20px;
+        }
+        &.black{
+          color: var(--text-color)
+        }
+        &.gray{
+          color: var(--body-color)
+        }
+        &.border-color{
+          color: var(--border-color)
+        }
+       }
+}
+
+.play-btn-area{
+    
+    .video-play{
+    @extend %d-flex,%item-center,%justify-center,%p-relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--theme-color);
+    z-index: 99;
+   
+    & i{
+        color: var(--white-color);
+        font-size: 12px;
+        z-index: 99;
+    }
+    
+    &::before{
+      position: absolute;
+        content: " ";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color:var(--theme-color);
+        border-radius: 100%;
+        z-index: 1;
+        animation: play-area 2s infinite linear;
+    }
+    }
+    
+}
+
+.mega-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 2s ease;
+
+
+
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+    z-index: 3;
+    transform: rotate(5deg);
+  }
+
+  &:before {
+    top: -10%;
+    right: 51%;
+    bottom: -10%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &:after {
+    top: 50%;
+    right: -10%;
+    bottom: 50%;
+    left: -10%;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  & img {
+    transition: all 2s ease;
+  }
+
+  &:hover {
+    &:before {
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: all 900ms linear;
+    }
+
+    &:after {
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: all 900ms linear;
+    }
+
+   & img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+
+@keyframes image-hover{
+    0%{
+        width: 100%;
+        opacity: 50%;
+        top: 50%;
+    }
+    100%{
+        height: 150%;
+        opacity: 0;
+        top: 0;
+        top: 0;
+    }
+}
+
+
+@keyframes play-area{
+    0% {
+        transform: scale(1);
+        opacity: 100%;
+    }
+    40% {
+        transform: scale(1.3);
+        opacity: 70%;
+    }
+    70% {
+        transform: scale(1.5);
+        opacity: 40%;
+    }
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes ri-jello {
+  0% {
+    transform: none;
+  }
+  11.1% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+  22.2% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+  33.3% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+  44.4% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+  55.5% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+  66.6% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+  77.7% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+  88.8% {
+    transform: skewX(0.09765625deg) skewY(0.09765625deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+
+
+.accordion{
+
+    .f-accordion-item{
+        background-color: #F7F7F7;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border-bottom: none;
+        border: 1px solid #F5F5F5;
+        .f-accordion-header{
+       
+            .f-accordion-button{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                border: none;
+                background-color: #F7F7F7;
+                padding: 39px 45px 36px 45px;
+                
+                & span{
+                    font-family: $Ari;
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 24px;
+                    line-height: 30px;
+                    letter-spacing: 0%;
+                    color: var(--black-color);
+
+                }
+                & i{
+                        color: var(--blue-color);
+                        transition: all 0.3s ease;
+                        transform: rotate(180deg);
+                        width: 30px;
+
+                }
+                &.collapsed{
+                    & i{
+                        color: var(--gray-color);
+                        transform: rotate(90deg);
+                        height: 30px;
+                    }
+                    background-color: #FFFFFF;
+                }
+               
+            }
+        }
+    }
+
+
+    .f-accordion-body{
+         border-top: 1px solid #E5E5E9;
+         padding: 27px 0 47px 0;
+        margin: 0 45px;
+        & span{
+            font-family: $Ari;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 0%;
+            color: var(--gray-color);
+        }
+    }
+}
+
+
+.container-s{
+        max-width: 1576px;
+        overflow: hidden;
+        margin-right: -300px;
+        padding-right: 0;
+}
+
+
+
+
+
+
+
+
+

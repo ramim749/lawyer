@@ -1,0 +1,808 @@
+@use '../../utils' as*;
+
+
+
+.service{
+    .sec-title{
+        padding-bottom: 10px;
+    }
+    &-content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 35px;
+        // color: #09827D;
+        position: relative;
+        z-index: 99;
+        @include breakpoint(max-lg){
+           margin: 30px 2px 0 2px;
+        }
+         &-title{
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 22px;
+            font-family: $Play;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 28px;
+            color: var(--white-color);
+            transition: $transition-3-ease;
+            @include breakpoint(max-xl){
+                margin-bottom: 15px;
+            }
+            // @include breakpoint(max-sm){
+            //     margin: 10px 0;
+            // }
+            &:hover{
+                color: var(--theme-color);
+            }
+        }
+         &-3{
+            background: none;
+            background-color: var(--cream-color);
+            padding: 10px;
+            border-radius: 5px;
+            transition: $transition-3-ease;
+            margin: 0 10px;
+             @include breakpoint(max-lg){
+                margin-bottom: 20px;
+                flex-direction: column-reverse;
+            }
+            &:hover{
+                background-color: var(--theme-color);
+                .service-text{
+                    background-color: var(--white-color);
+                    border: none;
+                }
+            }
+            &.four{
+                position: relative; 
+                transition: $transition-3-ease;
+                background-color: transparent;
+                .service-text{
+                    background-color: var(--white-light-color);
+                }
+                &::after{
+                    position: absolute;
+                    content: " ";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: var(--white-light-color);
+                    // opacity: 10%;
+                    border-radius: 5px;
+                }
+                & h3{
+                    color: var(--white-color);
+                    transition: $transition-3-ease;
+
+                }
+                & p{
+                    color: var(--white-color);
+                    transition: $transition-3-ease;
+
+                }
+                 &:hover{
+                background-color: var(--theme-color);
+                .service-text{
+                    background-color: var(--white-color);
+                    border: none;
+                     & h3{
+                    color: var(--text-color);
+                }
+                & p{
+                    color: var(--body-color);
+                }
+                }
+            }
+            }
+         }
+         &.one{
+                @include breakpoint(max-lg){
+            flex-direction: column-reverse;
+        }
+         }
+         &.three{
+                @include breakpoint(max-lg){
+            flex-direction: column-reverse;
+        }
+         }
+         &:hover{
+            .arrow-btn{
+                    background-color: var(--white-color);
+                .arrow-path{
+                    fill: var(--theme-color);
+                }
+               
+            }
+           .mega-hover {
+    &:before {
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: all 900ms linear;
+    }
+
+    &:after {
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: all 900ms linear;
+    }
+
+   & img {
+      transform: scale(1.04);
+    }
+            }
+
+         }
+         
+    }
+    &-btn{
+        text-align: right;
+        @include breakpoint(max-lg){
+            text-align: left;
+        }
+    }
+    &-text{
+        background: linear-gradient(180deg, #021C1B 0%, #09827D 100%);
+        padding: 35px 40px;
+        z-index: 999;
+        @include breakpoint(max-xl){
+            padding:  30px;
+        }
+        @include breakpoint(max-sm){
+            padding:  30px;
+            .icon{
+                & img{
+                    width: 40px;
+                }
+            }
+        }
+        @include breakpoint(max-xsm){
+            padding:  20px;
+           
+        }
+       
+        & p{
+            font-family: $Dm;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--white-color);
+            @include breakpoint(max-sm){
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        .arrow-btn{
+            margin-top: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: var(--theme-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 25px;
+            transition: $transition-3-ease;
+            .arrow{
+                width: 19px;
+                height: 19px;
+            }
+
+            .arrow-path{
+                fill: var(--white-color);
+            transition: $transition-3-ease;
+
+            }
+            &:hover{
+                transform: rotate(45deg);
+            }
+             @include breakpoint(max-xsm){
+                width: 50px;
+                height: 50px;
+                margin-top: 15px;
+                .arrow{
+                    width: 15px;
+                    height: 15px;
+                }
+               
+            }
+        }
+        &.one{
+            border-top-left-radius: 40px;
+            position: relative;
+            @include breakpoint(max-lg){
+           border-radius: 0 0 20px 20px;
+            }
+
+        }
+        &.two{
+             @include breakpoint(max-lg){
+            border-radius: 0 0 20px 20px;
+
+            }
+        }
+        &.three{
+            border-top-right-radius: 40px;
+
+             @include breakpoint(max-lg){
+            border-radius: 0 0 20px 20px;
+
+            }
+        }
+        &-3{
+            padding: 0 20px 30px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: none;
+            background-color: var(--cream-color);
+            @include breakpoint(max-xl){
+                padding: 0 10px 20px 10px
+            }
+            @include breakpoint(max-lg){
+                padding: 0 20px 20px 20px
+                
+            }
+            @include breakpoint(max-sm){
+                padding: 0 10px 20px 10px
+                
+            }
+            @include breakpoint(max-xsm){
+                padding: 0 20px 20px 20px
+                
+            }
+          .icon-area{
+                @extend %w-100,%d-flex,%justify-center;
+                margin-top: -1px;
+              .icon{
+                @extend %d-flex,%justify-center,%item-center;
+                width: 70px;
+                height: 70px;
+                background-color: var(--theme-color);
+                border-radius: 0 0 5px 5px;
+            }
+          }
+            & h3{
+                color: var(--text-color);
+                font-size: 20px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                 @include breakpoint(max-xl){
+                     margin-top: 20px;
+                    margin-bottom: 20px;
+                 }
+            }
+            & p{
+                color: var(--body-color);
+            }
+        }
+    }
+    &-thumb{
+        overflow: hidden;
+        width: 100%;
+        height: 364px;
+        position: relative;
+        
+         @include breakpoint(max-xl){
+            height: 373px;
+         }
+         @include breakpoint(max-lg){
+            height: 300px;
+         }
+         @include breakpoint(max-md){
+            height: 250px;
+         }
+         @include breakpoint(max-xsm){
+            height: 200px;
+         }
+       
+         
+        .img{
+            height: 100%;
+            transition: all 2s ease;
+        }
+       
+        &.two{
+            // height: 364px;
+          
+            @include breakpoint(max-lg){
+                border-radius: 20px 20px 0 0;
+                // height: 320px;
+            }
+        //     @include breakpoint(max-xsm){
+        //     height: 260px;
+        //  }
+
+        }
+        &.one{
+            border-bottom-left-radius: 40px;
+            @include breakpoint(max-lg){
+                border-radius: 20px 20px 0 0;
+                // height: 320px;
+            }
+        //       @include breakpoint(max-xsm){
+        //     height: 260px;
+        //  }
+          
+        }
+        &.three{
+            border-bottom-right-radius: 40px;
+
+            @include breakpoint(max-lg){
+                border-radius: 20px 20px 0 0;
+                // height: 320px;
+            }
+        //       @include breakpoint(max-xsm){
+        //     height: 260px;
+        //  }
+        }
+
+    }
+}
+
+.service2{
+    &-content{
+            &-wrapper{
+            background: linear-gradient(to bottom, #021C1B 0%,#09827D 100%);
+         }
+          &-title{
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 22px;
+            font-family: $Play;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 28px;
+            color: var(--white-color);
+            transition: $transition-3-ease;
+            @include breakpoint(max-xl){
+                margin-bottom: 15px;
+            }
+            // @include breakpoint(max-sm){
+            //     margin: 10px 0;
+            // }
+            &:hover{
+                color: var(--theme-color);
+            }
+        }
+    }
+    &-text{
+        padding: 35px 40px;
+        z-index: 999;
+        @include breakpoint(max-xl){
+            padding:  30px;
+        }
+        @include breakpoint(max-sm){
+            padding:  30px;
+            .icon{
+                & img{
+                    width: 40px;
+                }
+            }
+        }
+        @include breakpoint(max-xsm){
+            padding:  20px;
+           
+        }
+       
+        & p{
+            font-family: $Dm;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--white-color);
+            @include breakpoint(max-sm){
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        .arrow-btn{
+            margin-top: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: var(--theme-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 25px;
+            transition: $transition-3-ease;
+            .arrow{
+                width: 19px;
+                height: 19px;
+            }
+
+            .arrow-path{
+                fill: var(--white-color);
+            transition: $transition-3-ease;
+
+            }
+            &:hover{
+                transform: rotate(45deg);
+            }
+             @include breakpoint(max-xsm){
+                width: 50px;
+                height: 50px;
+                margin-top: 15px;
+                .arrow{
+                    width: 15px;
+                    height: 15px;
+                }
+               
+            }
+        }
+        &.one{
+            border-top-left-radius: 40px;
+            position: relative;
+            background: url(../img/Service/service-text-1.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @include breakpoint(max-lg){
+           border-radius: 0 0 20px 20px;
+            }
+
+        }
+        &.two{
+               background: url(../img/Service/service-text-2.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+             @include breakpoint(max-lg){
+            border-radius: 0 0 20px 20px;
+
+            }
+        }
+        &.three{
+            border-top-right-radius: 40px;
+
+             @include breakpoint(max-lg){
+            border-radius: 0 0 20px 20px;
+
+            }
+        }
+       
+    }
+    &-thumb{
+           background: url(../img/Service/service-3-text.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        padding: 30px;
+        & img{
+            border-radius: 30px;
+        }
+        &.one{
+            background: url(../img/Service/service-bg-1.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-top-right-radius: 40px;
+
+        }
+        &.two{
+            background: url(../img/Service/service-bg-2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        &.three{
+            background: url(../img/Service/service-bg-3.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-top-left-radius: 40px;
+
+        }
+    }
+}
+
+
+
+
+.practice{
+    &-content{
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        &-title{
+            display: inline-block;
+            margin-bottom: 15px;
+            font-family: $Play;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 34px;
+            color: var(--text-color);
+            transition: $transition-3-ease;
+            &:hover{
+                color: var(--theme-color);
+            }
+        }
+           
+       &.two{
+            background-color: var(--white-color);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            margin-top: 1px;
+            transition: $transition-5-ease;
+             @include breakpoint(max-sm){
+                 display: block;
+                }
+        &:hover{
+            outline: 1px solid var(--theme-color);
+                .arrow-btn{
+                    background-color: var(--theme-color);
+                }
+                 .mega-hover {
+    &:before {
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: all 900ms linear;
+    }
+
+    &:after {
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: all 900ms linear;
+    }
+
+   & img {
+      transform: scale(1.04);
+    }
+            }
+            }
+       }
+    }
+    &-text{
+        padding: 40px;
+        border-radius: 40px;
+        z-index: 999;
+        
+        
+        & p{
+            font-family: $Dm;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--white-color);
+        }
+        .arrow-btn{
+            margin-top: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: var(--theme-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 25px;
+            transform: rotate(-45deg);
+            transition: $transition-3-ease;
+            & svg{
+                fill: var(--white-color);
+            }
+            &:hover{
+                transform: rotate(0);
+            }
+        }
+        &-2{
+            position: relative;
+             @include breakpoint(max-xl){
+                padding:30px;
+                max-width: 360px ;
+                }
+             @include breakpoint(max-lg){
+                padding:40px;
+                max-width:100% ;
+                }
+             @include breakpoint(max-md){
+                padding:30px;
+                max-width:100% ;
+                &.two,&.three{
+                    max-width: 100%;
+                }
+                }
+                @include breakpoint(max-sm){
+                padding:40px;
+                max-width:100% ;
+                }
+                @include breakpoint(max-xsm){
+                padding:30px 20px;
+                max-width:100% ;
+                }
+             
+            & h3{
+                color: var(--text-color);
+                 @include breakpoint(max-sm){
+                margin-bottom: 15px;
+                }
+                
+            }
+            & p{
+                color: var(--body-color);
+            }
+            .arrow-btn{
+            margin-top: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 25px;
+            transform: rotate(-45deg);
+            transition: all 0.3s ease;
+            
+            }
+            .number{
+                display: block;
+                position: absolute;
+                right: 50px;
+                bottom: 55px;
+                font-family: $Dm;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 48px;
+                line-height: 26px;
+                color: transparent;
+                -webkit-text-stroke: 1px var(--text-color);
+
+            }
+            // &.three{
+            //     @include breakpoint(max-xl){
+            //     padding: 25px;
+            //     & h3{
+            //         margin-bottom: 15px;
+            //     }
+            //     }
+            // }
+        }
+      
+    }
+    &-thumb{
+        max-width: 345px;
+        width: 100%;
+        height: auto;
+        border-radius: 0 10px 10px 0;
+        // margin: -1px;
+        overflow: hidden;
+        @include breakpoint(max-xl){
+            max-width: 290px;
+            width: 100%;
+            height: auto;
+        }
+        @include breakpoint(max-md){
+            max-width: 100%;
+            width: 100%;
+            height: 250px;
+            margin: 0;
+            &.one,&.four{
+                border-radius: 10px 10px 0 0;
+            }
+        }
+        &.four{
+            border-radius: 10px 0 0 10px;
+            @include breakpoint(max-md){
+                border-radius: 10px 10px 0 0 ;
+            }
+            
+        }
+    }
+}
+
+
+.practice-details{
+    & h2{
+        font-family: $Play;
+        font-size: 48px;
+        line-height: 54px;
+        font-weight: 700;
+        color: var(--text-color);
+        margin-top: 25px;
+        @include breakpoint(max-sm){
+            font-size: 38px;
+            line-height: 44px;
+        }
+        @include breakpoint(max-sm){
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+    & h3{
+        font-family: $Play;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 700;
+        color: var(--text-color);
+        margin-top: 25px;
+         @include breakpoint(max-sm){
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    & p{
+        font-family: $Dm;
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 400;
+        color: var(--body-color);
+        margin-top: 25px;
+    }
+
+    &-thumb1{
+        border-radius: 5px;
+        width: 100%;
+        height: 415px;
+        @include breakpoint(max-lg){
+            height: 350px;
+        }
+        @include breakpoint(max-md){
+            height: 250px;
+        }
+        @include breakpoint(max-xsm){
+            height: 200px;
+        }
+    }
+    &-thumb2{
+        border-radius: 5px;
+        width: 100%;
+        height: 300px;
+        margin-top: 25px;
+        @include breakpoint(max-md){
+            height: 250px;
+        }
+        @include breakpoint(max-xsm){
+            height: 200px;
+        }
+    }
+
+    &-left{
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 30px 0 #00000014 ;
+        @include breakpoint(max-sm){
+            padding: 30px;
+        }
+        @include breakpoint(max-sm){
+            padding: 30px 15px;
+        }
+        
+        .faq-accordion{
+            & p{
+                margin-top: 0;
+            }
+        }
+    }
+    &-right{
+        & h3{
+            margin-top: 0;
+        }
+        .widget-categories{
+            margin-top: 0;
+        }
+            @include breakpoint(max-lg){
+                margin-top: 40px;
+            }
+        }
+}
+
+
+
+

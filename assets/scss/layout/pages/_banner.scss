@@ -1,0 +1,202 @@
+@use '../../utils' as*;
+
+
+.banner{
+     &:hover{
+        .slider{
+            animation-play-state: paused;
+        }
+    }
+     &.one{
+     width: 100%;
+    padding: 100px 0;
+    background: linear-gradient(185.33deg, #021C1B 4.67%, #09827D 100.76%);
+    @include breakpoint(max-lg){
+        padding: 50px 0;
+    }
+    @include breakpoint(max-sm){
+        padding: 20px 0;
+    }
+   
+   
+   }
+   &-slider{
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    gap: 60px;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    
+    .slider{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 85px;
+       animation: infinite-slider 50s infinite linear;
+       @include breakpoint(max-lg){
+        gap: 50px;
+       }
+       @include breakpoint(max-sm){
+        gap: 20px;
+           }
+      .img{
+        width: 216px;
+        height: auto;
+        @include breakpoint(max-sm){
+        width: 100px;
+           }
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+      }
+     
+    }
+   }
+   
+  
+   
+   &.two{
+    width: 100%;
+    padding: 26px 0;
+    overflow: hidden;
+    z-index: 100;
+    position: relative;
+    background-color: var(--theme-color);
+    @include breakpoint(max-sm){
+        padding: 20px 0;
+    }
+    .img{
+        width: 150px;
+        height: auto;
+         @include breakpoint(max-sm){
+        width: 100px;
+        }
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+   }
+   &.three{
+    width: 100%;
+    .banner-arrows{
+        display: flex;
+        gap: 10px;
+        padding-left: 48%;
+        position: relative;
+         @include breakpoint(max-xl){
+                padding-left: 46% ;
+            }
+         @include breakpoint(max-md){
+                padding-left: 45% ;
+            }
+         @include breakpoint(max-xsm){
+                padding-left: 40% ;
+            }
+        // transform: translateX(-50%);
+        .arrow{
+            @extend %d-flex,%justify-center,%item-center;
+            width: 25px;
+            height: 25px;
+            background-color: var(--border-color2);
+            transition: $transition-3-ease;
+            & i{
+                font-size: 16px;
+            }
+            &:hover{
+                background-color: var(--theme-color);
+                & i{
+                    color: var(--white-color);
+                }
+            }
+        }
+        &::after{
+            position: absolute;
+            content: " ";
+            width: calc( 50% - 40px );
+            height: 1px;
+            background-color: var(--theme-color);
+            left:0;
+            top: 50%;
+             @include breakpoint(max-xl){
+                width: calc( 50% - 50px );
+            }
+             @include breakpoint(max-lg){
+                width: calc( 50% - 40px );
+            }
+             @include breakpoint(max-sm){
+                width: calc( 50% - 30px );
+            }
+             @include breakpoint(max-xsm){
+                width: calc( 50% - 45px );
+            }
+            
+        }
+        &::before{
+            position: absolute;
+            content: " ";
+            width: calc( 50% - 45px );
+            height: 1px;
+            background-color: var(--theme-color);
+            right:0;
+            top: 50%;
+            @include breakpoint(max-xl){
+                width: calc( 50% - 40px );
+            }
+            @include breakpoint(max-lg){
+                width: calc( 50% - 45px );
+            }
+            @include breakpoint(max-xsm){
+                width: calc( 50% - 35px );
+            }
+        }
+    }
+    .img{
+        width: auto;
+        height: auto;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: invert(0.7);
+        }
+    }
+    &.four{
+    .arrow{
+        background-color: var(--white-light-color);
+        & i {
+            color: var(--white-color);
+        }
+    
+    }
+         .img{
+        width: auto;
+        height: auto;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: invert(0);
+        }
+    }
+   }
+   }
+   
+}
+
+
+
+@keyframes infinite-slider{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+        }
+}
