@@ -901,13 +901,21 @@ $(document).ready(function() {
  
 // <<<<<------Count Start------->>>>>>
 
-if($('.count').length) {
-      $('.count').counterUp({
-          delay: 10,
-        time: 3000,
-    });
+// if($('.count').length) {
+//       $('.count').counterUp({
+//           delay: 10,
+//         time: 3000,
+//     });
 
-    }
+//     }
+
+
+  $(document).ready(function() {
+    $('.count').counterUp({
+      delay: 10,
+      time: 3000,
+    });
+  });
 
 
 // <<<<<------Count End------->>>>>>
