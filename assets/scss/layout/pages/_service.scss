@@ -535,6 +535,7 @@
             border-radius: 10px;
             margin-bottom: 30px;
             margin-top: 1px;
+            outline: 1px solid transparent;
             transition: $transition-5-ease;
              @include breakpoint(max-sm){
                  display: block;

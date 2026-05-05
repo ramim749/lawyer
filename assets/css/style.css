@@ -11978,6 +11978,7 @@ img {
   border-radius: 10px;
   margin-bottom: 30px;
   margin-top: 1px;
+  outline: 1px solid transparent;
   transition: all 0.5s ease;
 }
 @media only screen and (max-width: 575.98px) {
